@@ -1,6 +1,6 @@
 # WORKSPACE MASTER PLAN
 
-> Generated 2025-10-20 16:52:39 by ops/gen_master_plan.py. Do not edit by hand.
+> Generated 2025-10-20 16:55:50 by ops/gen_master_plan.py. Do not edit by hand.
 
 ## Purpose
 Single workspace, original scope intact. Add/import projects, auto-evaluate, standardize docs and ops.
