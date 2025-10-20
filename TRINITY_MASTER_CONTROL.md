@@ -33,3 +33,18 @@ DO NOT EDIT BY HAND
 2) Builder implements (default: Gemini) → BUILD.md
 3) GPT-5 verifies → update this file
 4) Repeat
+## RUNNER MATRIX
+- You:
+  - Export env vars, create dirs, set git remote, push.
+  - Run local dev: ops/dev.sh, ops/verify.sh.
+  - Use ws CLI when needed: ws new|import|eval.
+- Gemini CLI (Primary Builder):
+  - Generate/commit docs: ops/gen_master_plan.py, ops/refresh_plan.sh.
+  - Workspace ops: scripts/gen_bootstrap.sh, scripts/gen_task_stubs.sh.
+  - Deep enrichment and file changes; commit results.
+- Claude Code CLI (Premium, token-limited):
+  - Same as Gemini only if Gemini cannot proceed.
+- Web Claude (Orchestrator):
+  - Route DESIGN→GPT-5, BUILD→Builder; track status. No file writes.
+- GPT-5 (Architect):
+  - Produce ARCHITECT.md and design artifacts. No shell commands.
