@@ -1,0 +1,3 @@
+#!/usr/bin/env python3
+import sys, json, pathlib
+p=pathlib.Path(sys.argv[1]); json.load(p.open()); print("OK", p)

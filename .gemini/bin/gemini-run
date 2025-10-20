@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+MASTER="$HOME/refresh/organized/arch/geminicli/gpt5thinkmd"
+WS="$MASTER/.gemini"
+ALLOWED_ROOTS=("$MASTER" "$WS/workspace")
+cmd="$*"
+
+gemwrite(){ dest="$1"; tmp="${dest}.tmp.$$"; cat > "$tmp"; mv -f "$tmp" "$dest"; }
+
+in_root=0
+for t in "${ALLOWED_ROOTS[@]}"; do case "$PWD" in "$t"*) in_root=1; break;; esac; done
+if [[ $in_root -ne 1 ]]; then echo "[FAIL] cwd '$PWD' outside allowed roots" >&2; exit 2; fi
+
+# adopt calibration file if present
+CAL="$WS/etc/calibration.env"
+if [[ -f "$CAL" ]]; then . "$CAL"; fi
+
+# harden limits and env
+ulimit -n ${ULIMIT_NOFILE:-1048576} || true
+export GEMINI_MAX_BYTES="${GEMINI_MAX_BYTES:-524288000}"
+export GEMINI_PAGE_LINES="${GEMINI_PAGE_LINES:-0}"
+export GEMINI_PARALLEL="${GEMINI_PARALLEL:-4}"
+
+date -Is | tee -a "$WS/ops.log" # Modified line
+echo "$cmd" | tee -a "$WS/ops.log" # Modified line
+set +e; bash -lc "$cmd"; ec=$?; set -e
+echo "[exit=$ec]" | tee -a "$WS/ops.log"; exit $ec

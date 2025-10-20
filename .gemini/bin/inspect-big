@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+f="$1"
+wc -c "$f"
+if command -v sha256sum >/dev/null 2>&1; then
+  sha256sum "$f"
+elif command -v shasum >/dev/null 2>&1; then
+  shasum -a 256 "$f"
+else
+  echo "sha256 tool not found" >&2
+fi
+head -n 50 "$f" || true; echo "..."; tail -n 50 "$f" || true

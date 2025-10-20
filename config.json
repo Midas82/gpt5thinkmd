@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "roots": {
+    "master": "~/refresh/organized/arch/geminicli/gpt5thinkmd",
+    "archive": "~/refresh/_archive",
+    "inbox": "~/refresh/_inbox",
+    "scratch": "~/refresh/_scratch",
+    "index": "~/refresh/index",
+    "brainflash": "~/refresh/brainflash"
+  },
+  "scan_roots": ["~/Desktop","~/Downloads","~/Documents","~/Projects"],
+  "ignore_globs": ["**/node_modules/**",".git/**","**/__pycache__/**","**/.cache/**",".DS_Store","thumbs.db"],
+  "status_lifecycle": ["planned","active","paused","done","archived"],
+  "percent_rule": "completed_checkboxes / total_checkboxes in TASKS.md",
+  "safety": {"dry_run_default": true, "delete_moves_to_archive": true, "hash_large_files_over_mb": 50}
+}
