@@ -16,10 +16,9 @@ DO NOT EDIT BY HAND
 - Track Claude Code tokens here. Switch to Gemini when <20% remain.
 
 ## ACTIVE CONTEXT
-- Current Project: [none]
-- Last Action: Initialization at 2025-10-20T05:13:14-06:00
-- Next Steps: Generate WORKSPACE_MASTER_PLAN.md and create first project.
-
+- Current Project: workspace-dashboard
+- Last Action: Plan refresh at 2025-10-20T17:08:37.722421
+- Next Steps: use ws/ops as-is; builder = Gemini
 ## PROJECT REGISTRY
 | ID | Name | Status | Created | Progress | Builder Used |
 |----|------|--------|---------|----------|--------------|
