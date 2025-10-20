@@ -1,6 +1,6 @@
 # WORKSPACE MASTER PLAN
 
-> Generated 2025-10-20 17:01:18 by ops/gen_master_plan.py. Do not edit by hand.
+> Generated 2025-10-20 17:02:53 by ops/gen_master_plan.py. Do not edit by hand.
 
 ## Purpose
 Single workspace, original scope intact. Add/import projects, auto-evaluate, standardize docs and ops.
@@ -29,7 +29,12 @@ Add/Import → Evaluate → Design (ARCHITECT.md) → Build (BUILD.md) → Verif
 Append ideas to global Brainflash. Groom later.
 
 ## Current Projects
-No projects listed.
+| id | area | stack | workspace_path |
+|---|---|---|---|
+| billion-estimator-pro-521ae84d | development | cpp|python | /home/midas/refresh/workspaces/development/billion-estimator-pro-521ae84d |
+| floorcraft-pro-5be456d1 | development | cpp|js|python | /home/midas/refresh/workspaces/development/floorcraft-pro-5be456d1 |
+| web-54edd016 | development | js|node|pnpm|ts | /home/midas/refresh/workspaces/development/web-54edd016 |
+| workspace-dashboard | development |  | /home/midas/refresh/workspaces/development/workspace-dashboard |
 
 ## GUI Plan
 Dashboard after core loop: projects table, project detail, Brainflash add/search.
